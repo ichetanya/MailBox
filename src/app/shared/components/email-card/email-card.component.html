@@ -1,0 +1,28 @@
+<div class="email-card" (click)="onClick()">
+    <div class="email-user-section">
+        <div class="email-user-image">
+            <img [src]="data.sender.image | assetUrl:'image'" [alt]="data.sender.firstName">
+        </div>
+        <div class="email-user-details">
+            <div class="email-user-header">
+                <span class="email-user-name">
+                    {{data.sender.firstName}}  {{data.sender.lastName}}
+                </span>
+                <span class="email-date-time">
+                    {{data.date | day}} {{data.time}}
+                </span>
+            </div>
+            <div class="email-subject">
+                {{data.subject}}
+            </div>
+            <div class="email-preview">
+                <p class="email-body">
+                    {{data.body}}
+                </p>
+                <p *ngIf="data.attachments?.length"> 
+                    <span>{{data?.attachments?.length}} Attachments</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+.email-card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    margin-bottom: 0.85rem;
+    opacity: 1;
+    width: 100%;
+    height: 10.2rem;
+    // position: sticky;
+    top: 0;
+    .email-user-section {
+      display: flex;
+      padding: 1rem;
+      width: 100%;
+      height: 100%;
+      .email-user-image {
+        height: 100%;
+        img {
+          height: 3em;
+          width: 3em;
+          border-radius: 50%;
+        }
+      }
+      .email-user-details {
+        padding-left: 1rem;
+        width: 85%;
+        .email-user-header {
+          font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .email-user-name {
+          }
+          .email-date-time {
+            margin-left: 0.5rem;
+            font-size: 0.75rem;
+          }
+        }
+        .email-preview {
+          margin-top: 0.5rem;
+          font-size: 0.75rem;
+          height: 55%;
+          width: 100%;
+          .email-body {
+            overflow: hidden;
+            // text-overflow: ellipsis;
+            height: 80%;
+            // white-space: nowrap;
+          }
+        }
+      }
+    }
+    &:hover{
+        cursor: pointer;
+        box-shadow: 20px 7px 40px #00000014;
+    }
+  }

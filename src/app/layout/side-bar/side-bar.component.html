@@ -1,0 +1,32 @@
+<div class="side-bar" [ngClass]="collapsed ? 'side-bar-collapsed' : ''">
+    <div class="side-bar-user-info">
+        agg
+    </div>
+    <ul class="side-bar-nav" >
+        <li class="side-bar-nav-item" *ngFor="let menu of menuItems" [routerLink]="menu.routerLink">
+           <img [src]="menu.icon | assetUrl:'icon'" [alt]="menu.label"> 
+           <span class="nav-item-label">
+            {{menu.label}}
+           </span>
+        </li>
+    </ul>
+
+    <div class="side-bar-folder-header">
+        <span>
+            Folders
+        </span>
+    </div>
+    <ul class="side-bar-nav" >
+        <li class="side-bar-nav-item" *ngFor="let folder of folders" [routerLink]="folder.routerLink">
+            {{folder.label}}
+        </li>
+    </ul>
+
+    <div class="compose-section">
+        <button class="compose-button">
+            Compose
+        </button>
+    </div>
+   
+
+</div>
