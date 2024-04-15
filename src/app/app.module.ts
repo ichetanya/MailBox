@@ -11,6 +11,9 @@ import { MainContentComponent } from './layout/main-content/main-content.compone
 import { DayPipe } from './shared/pipes/day.pipe';
 import { AssetUrlPipe } from './shared/pipes/asset-url.pipe';
 import { EmailCardComponent } from './shared/components/email-card/email-card.component';
+import { EmailPreviewComponent } from './shared/components/email-preview/email-preview.component';
+import { EmptyPreviewComponent } from './shared/components/empty-preview/empty-preview.component';
+import { EmailListBoxComponent } from './shared/components/email-list-box/email-list-box.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { EmailCardComponent } from './shared/components/email-card/email-card.co
     MainContentComponent,
     DayPipe,
     AssetUrlPipe,
-    EmailCardComponent
+    EmailCardComponent,
+    EmailPreviewComponent,
+    EmptyPreviewComponent,
+    EmailListBoxComponent
   ],
   imports: [
     BrowserModule,

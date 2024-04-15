@@ -3,5 +3,7 @@ export const RouterConfiguration = {
     flagged : 'flagged',
     draft : 'draft',
     sent : 'sent',
-    trash: 'trash'
+    trash: 'trash',
+    empty: 'empty',
+    details: 'details'
 }
