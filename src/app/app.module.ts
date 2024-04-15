@@ -14,6 +14,7 @@ import { EmailCardComponent } from './shared/components/email-card/email-card.co
 import { EmailPreviewComponent } from './shared/components/email-preview/email-preview.component';
 import { EmptyPreviewComponent } from './shared/components/empty-preview/empty-preview.component';
 import { EmailListBoxComponent } from './shared/components/email-list-box/email-list-box.component';
+import { FolderComponent } from './pages/folder/folder.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EmailListBoxComponent } from './shared/components/email-list-box/email-
     EmailCardComponent,
     EmailPreviewComponent,
     EmptyPreviewComponent,
-    EmailListBoxComponent
+    EmailListBoxComponent,
+    FolderComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DayPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
+  transform(value: string): string {
     if (!value) return '';
     const date = new Date(value);
     const today = new Date();
@@ -16,7 +16,7 @@ export class DayPipe implements PipeTransform {
       return 'Today';
     } else if (this.isSameDay(date, yesterday)) {
       return 'Yesterday';
-    } else if (this.isMoreThanAWeekOld(date)) { 
+    } else if (this.isMoreThanAWeekOld(date)) {
       return this.formatDate(date);
     }
     else {
@@ -41,7 +41,7 @@ export class DayPipe implements PipeTransform {
     const day = ('0' + date.getDate()).slice(-2);
     const month = ('0' + (date.getMonth() + 1)).slice(-2);
     const year = date.getFullYear();
-  
+
     return `${day}/${month}/${year}`;
   }
 

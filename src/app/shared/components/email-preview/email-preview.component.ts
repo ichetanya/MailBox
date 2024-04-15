@@ -1,29 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EmailService } from '../../services/email.service';
+import { ActivatedRoute } from '@angular/router';
+import { EmailData } from '../../models/email-data';
 
 @Component({
   selector: 'app-email-preview',
   templateUrl: './email-preview.component.html',
   styleUrls: ['./email-preview.component.scss']
 })
-export class EmailPreviewComponent {
+export class EmailPreviewComponent implements OnInit {
   currentCount = 0;
   totalCount = 180;
-  data = {
-    id: uuid(),
-    sender: {
-      firstName: "John",
-      lastName: "Doe",
-      emailAddress: "john.doe@example.com",
-      image: "mike.png"
-    },
-    subject: "Meeting Reminder",
-    body: "Just a reminder that our meeting is scheduled for tomorrow at 10:00 AM.",
-    date: "2024-04-15",
-    time: "09:00 AM",
-    attachments: ["agenda.pdf"]
-  };
-}
-function uuid() {
-  return ''
+  data: EmailData;
+
+  constructor(private emailService: EmailService,
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id') ?? '';
+      if (id) {
+        this.getEmailData(id);
+      }
+    });
+  }
+
+  getEmailData(id: string) {
+    this.data = this.emailService.getEmailById(id);
+  }
 }
 

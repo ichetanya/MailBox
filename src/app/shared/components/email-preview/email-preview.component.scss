@@ -1,0 +1,34 @@
+@import "../../../shared/styles/mixins";
+
+.email-preview-container {
+  height: 100vh;
+  width: 100%;
+  padding: 1.9rem;
+  padding-top: 0;
+  // position: fixed;
+  background-color: $white;
+  .email-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    img {
+      height: 1em;
+    }
+  }
+  .email-preview {
+    .email-user-section {
+      display: flex;
+      .email-user-image {
+        img {
+          @include user-image(3rem);
+        }
+      }
+    }
+    .email-user-details {
+      padding-left: 1rem;
+      width: 85%;
+    }
+  }
+}

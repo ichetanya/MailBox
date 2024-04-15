@@ -1,15 +1,12 @@
-<div class="email-cards-container">
-    <div class="email-search">
-        <input class="input-search" type="search" name="search" id="search" autocomplete="off" placeholder="Search">
-    </div>
-    <div class="emails-list">
-        <app-email-card *ngFor="let email of emails" [data]="email" (showEmail)="showEmail($event)"> 
-        </app-email-card>
-    </div>
-</div>
+<div class="container">
+  <div class="email-cards-container">
+    <app-email-list-box
+      [emails]="emails"
+      (showEmail)="showEmail($event)"
+    ></app-email-list-box>
+  </div>
 
-<div class="email-details-container">
-    <div class="email-actions">
-        
-    </div>
+  <div class="email-details-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

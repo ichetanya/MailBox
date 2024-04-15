@@ -1,7 +1,9 @@
+@import "../../shared/styles/_variables.scss";
+
 .main-content {
-    width: calc(100% - 15rem);
-    background-color: #F9FAF5;
-    height: 100vh;
-    margin-left: 15rem;
-    position: relative;
+  width: calc(100% - 15%);
+  background-color: $offWhite;
+  height: 100vh;
+  margin-left: 15%;
+  position: fixed;
 }

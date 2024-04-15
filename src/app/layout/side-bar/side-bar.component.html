@@ -1,32 +1,56 @@
 <div class="side-bar" [ngClass]="collapsed ? 'side-bar-collapsed' : ''">
-    <div class="side-bar-user-info">
-        agg
+  <div class="side-bar-user-info">
+    <div class="user-image">
+      <img
+        [src]="currentUser.image | assetUrl : 'image'"
+        alt="data.sender.firstName"
+      />
     </div>
-    <ul class="side-bar-nav" >
-        <li class="side-bar-nav-item" *ngFor="let menu of menuItems" [routerLink]="menu.routerLink">
-           <img [src]="menu.icon | assetUrl:'icon'" [alt]="menu.label"> 
-           <span class="nav-item-label">
-            {{menu.label}}
-           </span>
-        </li>
-    </ul>
-
-    <div class="side-bar-folder-header">
-        <span>
-            Folders
-        </span>
+    <div class="user-details">
+      <div class="user-header">
+        <p class="user-name">
+          {{ currentUser?.firstName }} {{ currentUser?.lastName }}
+        </p>
+        <p class="user-email">
+          {{ currentUser.emailAddress }}
+        </p>
+      </div>
     </div>
-    <ul class="side-bar-nav" >
-        <li class="side-bar-nav-item" *ngFor="let folder of folders" [routerLink]="folder.routerLink">
-            {{folder.label}}
-        </li>
-    </ul>
+  </div>
+  <ul class="side-bar-nav">
+    <li
+      class="side-bar-nav-item"
+      *ngFor="let menu of menuItems"
+      [routerLink]="menu.routerLink"
+      routerLinkActive="active"
+    >
+      <img [src]="menu.icon | assetUrl : 'icon'" [alt]="menu.label" />
+      <span class="nav-item-label">
+        {{ menu.label }}
+      </span>
+    </li>
+  </ul>
 
-    <div class="compose-section">
-        <button class="compose-button">
-            Compose
-        </button>
-    </div>
-   
+  <div class="side-bar-folder-header">
+    <span> Folders </span>
+    <span class="add-folder-btn">Add</span>
+  </div>
+  <ul class="side-bar-nav">
+    <li
+      class="side-bar-nav-item"
+      *ngFor="let folder of folders"
+      (click)="navigateToFolder(folder)"
+    >
+      <img [src]="folder.icon | assetUrl : 'icon'" [alt]="folder.label" />
+      <span class="nav-item-label">
+        {{ folder.label }}
+      </span>
+    </li>
+  </ul>
 
+  <div class="compose-section">
+    <button class="compose-button">
+      <span class="compose-button-label">Compose</span>
+    </button>
+  </div>
 </div>

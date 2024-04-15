@@ -1,0 +1,34 @@
+<div class="email-preview-container">
+  <div class="email-actions">
+    <img [src]="'action_group.svg' | assetUrl : 'icon'" alt="group" />
+    <div>
+      <span> &#60; </span>
+      <span>{{ currentCount }}/{{ totalCount }}</span>
+      <span> &#62; </span>
+    </div>
+  </div>
+  <div class="email-preview">
+    <div class="email-user-section">
+      <div class="email-user-image">
+        <img
+          [src]="data.sender.image | assetUrl : 'image'"
+          [alt]="data.sender.firstName"
+        />
+      </div>
+      <div class="email-user-details">
+        <p class="email-user-header">
+          <span class="email-user-name">
+            {{ data.sender.firstName }} {{ data.sender.lastName }}
+          </span>
+        </p>
+        <p class="email-subject">
+          {{ data.subject }}
+        </p>
+        <p class="email-subject">
+          {{ data.sender.emailAddress }}
+        </p>
+        <p>{{ data.date | day }} {{ data.time }}</p>
+      </div>
+    </div>
+  </div>
+</div>

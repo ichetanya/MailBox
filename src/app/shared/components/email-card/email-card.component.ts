@@ -11,8 +11,12 @@ export class EmailCardComponent {
   @Input()
   data: EmailData;
 
+  @Input()
+  activeEmailId: string;
+
   @Output()
-  showEmail : EventEmitter<EmailData> = new EventEmitter();
+  showEmail: EventEmitter<EmailData> = new EventEmitter();
+
 
   onClick(): void {
     this.showEmail.emit(this.data);

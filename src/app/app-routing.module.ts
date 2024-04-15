@@ -8,6 +8,7 @@ import { SentComponent } from './pages/sent/sent.component';
 import { TrashComponent } from './pages/trash/trash.component';
 import { EmailPreviewComponent } from './shared/components/email-preview/email-preview.component';
 import { EmptyPreviewComponent } from './shared/components/empty-preview/empty-preview.component';
+import { FolderComponent } from './pages/folder/folder.component';
 
 const emailChildRoutes: Routes = [
   {
@@ -32,6 +33,8 @@ const routes: Routes = [
   { path: RouterConfiguration.draft, component: DraftComponent, children: emailChildRoutes },
   { path: RouterConfiguration.sent, component: SentComponent, children: emailChildRoutes },
   { path: RouterConfiguration.trash, component: TrashComponent, children: emailChildRoutes },
+  { path: RouterConfiguration.empty, component: EmptyPreviewComponent },
+  { path: `${RouterConfiguration.folder}/:folderName`, component: FolderComponent },
 ];
 
 @NgModule({

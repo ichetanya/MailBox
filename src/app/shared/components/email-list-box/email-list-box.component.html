@@ -1,0 +1,22 @@
+<div class="email-search">
+  <input
+    class="input-search"
+    type="search"
+    name="search"
+    id="search"
+    autocomplete="off"
+    placeholder="Search"
+  />
+</div>
+<div class="emails-list" *ngIf="emails.length > 0; else noEmails">
+  <app-email-card
+    *ngFor="let email of emails"
+    [data]="email"
+    [activeEmailId]="activeEmailId"
+    (showEmail)="emitEvent($event)"
+  >
+  </app-email-card>
+</div>
+<ng-template #noEmails>
+  <p class="no-email-present">No emails found.</p>
+</ng-template>
