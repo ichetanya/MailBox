@@ -9,8 +9,6 @@ import { EmailData } from '../../models/email-data';
   styleUrls: ['./email-preview.component.scss']
 })
 export class EmailPreviewComponent implements OnInit {
-  currentCount = 0;
-  totalCount = 180;
   data: EmailData;
 
   constructor(private emailService: EmailService,

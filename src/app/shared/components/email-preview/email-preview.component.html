@@ -1,11 +1,7 @@
-<div class="email-preview-container">
+<div class="email-preview-container" *ngIf="data; else noEmail">
   <div class="email-actions">
     <img [src]="'action_group.svg' | assetUrl : 'icon'" alt="group" />
-    <div>
-      <span> &#60; </span>
-      <span>{{ currentCount }}/{{ totalCount }}</span>
-      <span> &#62; </span>
-    </div>
+    <img [src]="'count_group.svg' | assetUrl : 'icon'" alt="group" />
   </div>
   <div class="email-preview">
     <div class="email-user-section">
@@ -29,7 +25,7 @@
           <p class="email-time">{{ data.date | day }} {{ data.time }}</p>
         </div>
       </div>
-      <div class="email-body">
+      <div class="email-body" *ngIf="data.attachments.length">
         <p class="email-content">
           {{data.body}}
         </p>
@@ -40,12 +36,21 @@
           >
         </p>
       </div>
+      <div class="attachment-grid">
+        <img *ngFor="let attachment of data.attachments; index as i" [src]="attachment | assetUrl:'image'"alt="Attachment">
+      </div>
       <div class="reply-section">
-        <div class="reply-input">
-          <input type="text" name="reply" id="reply" placeholder="Type Message">
+        <div  class="reply-input">
+          <input type="text" name="reply" id="reply" placeholder="Type Message" autocomplete="off">
+          <img [src]="'attachment.svg' | assetUrl:'icon'" alt="attachment">
+          <img [src]="'send.svg' | assetUrl:'icon'" alt="reply">
         </div>
+          
       </div>
     </div>
     
   </div>
 </div>
+<ng-template #noEmail>
+  <p class="no-data">No data to display.</p>
+</ng-template>
