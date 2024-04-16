@@ -29,11 +29,10 @@ export class InboxComponent implements OnInit {
   }
 
   showEmail(email: EmailData): void {
-    console.log(email);
-    if (this.currentDeviceWith > 860) {
-      this.router.navigate([RouterConfiguration.details, email.id], { relativeTo: this.route });
-    } {
+    if (this.currentDeviceWith <= 860) {
       this.router.navigate([RouterConfiguration.details, email.id]);
+    } else {
+      this.router.navigate([RouterConfiguration.details, email.id], { relativeTo: this.route });
     }
   }
 }

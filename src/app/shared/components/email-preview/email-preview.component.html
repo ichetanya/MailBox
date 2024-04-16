@@ -1,10 +1,8 @@
-<div class="top-actions">
-  <img
-    [src]="'back-arrow.svg' | assetUrl : 'icon'"
-    alt="back"
-    *ngIf="showBackIcon"
-    (click)="goBack()"
-  />
+<div class="top-actions" *ngIf="showBackIcon">
+  <span class="back" (click)="goBack()">
+    <img [src]="'back-arrow.svg' | assetUrl : 'icon'" alt="back" />
+    <span class="back-label">Back</span>
+  </span>
 </div>
 <div class="email-preview-container" *ngIf="data; else noEmail">
   <div class="email-actions">
