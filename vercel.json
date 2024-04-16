@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "my-app",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist/mail-box" }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" },
+    { "src": "/", "dest": "/index.html" }
+  ]
+}
