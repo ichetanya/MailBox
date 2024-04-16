@@ -31,5 +31,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 You can see the application running at [https://mail-box-ichetanya-chetanya-agarwals-projects.vercel.app] or [https://mail-box-chetanya-agarwals-projects.vercel.app]
 
+## Assumptions and Current State
+
+1. I have used 3 icons(back-arrow,hamburger and cross icons) in the mobile view of the app. These icons were not provided in the design.
+
+2. I've assumed that side-bar would be collapsable on mobile screens.
+
 
 

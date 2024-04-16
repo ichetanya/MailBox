@@ -31,7 +31,7 @@
           <p class="email-time">{{ data.date | day }} {{ data.time }}</p>
         </div>
       </div>
-      <div class="email-body" *ngIf="data.attachments.length">
+      <div class="email-body">
         <p class="email-content">
           {{ data.body }}
         </p>
@@ -42,7 +42,7 @@
           >
         </p>
       </div>
-      <div class="attachment-grid">
+      <div class="attachment-grid" *ngIf="data.attachments.length">
         <img
           *ngFor="let attachment of data.attachments; index as i"
           [src]="attachment | assetUrl : 'image'"
