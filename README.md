@@ -29,7 +29,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Live Demo
 
-You can see the application running at [https://mail-box-ichetanya-chetanya-agarwals-projects.vercel.app] or [https://mail-box-chetanya-agarwals-projects.vercel.app]
+You can see the application running at [https://mail-box-chetanya-agarwals-projects.vercel.app] or [https://mail-box-ichetanya-chetanya-agarwals-projects.vercel.app]
+
+mail-box-chetanya-agarwals-projects.vercel.app
+mail-box-ichetanya-chetanya-agarwals-projects.vercel.app
 
 ## Assumptions and Current State
 
