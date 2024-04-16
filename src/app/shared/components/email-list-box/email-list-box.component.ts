@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { EmailData } from '../../models/email-data';
+import { EmailData } from 'mailbox-common';
 
 @Component({
   selector: 'app-email-list-box',

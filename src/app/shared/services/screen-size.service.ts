@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
+import { WindowSize } from 'mailbox-common';
 import { BehaviorSubject, fromEvent, } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-
-interface WindowSize {
-  width: number;
-  height: number;
-}
 
 @Injectable({
   providedIn: 'root'

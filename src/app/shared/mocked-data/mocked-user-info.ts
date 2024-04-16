@@ -1,4 +1,5 @@
-import { UserInfo } from "../models/user-info";
+import { UserInfo } from "mailbox-common";
+
 
 export const user: UserInfo = {
     firstName: "Mike",

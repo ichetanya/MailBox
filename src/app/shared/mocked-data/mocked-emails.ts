@@ -1,4 +1,4 @@
-import { EmailData } from "../models/email-data";
+import { EmailData } from 'mailbox-common';
 import { v4 as uuid } from 'uuid';
 
 export const mockedEmails: EmailData[] = [

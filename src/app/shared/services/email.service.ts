@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { UserInfo } from '../models/user-info';
-import { EmailData } from '../models/email-data';
 import { mockedEmails } from '../mocked-data/mocked-emails';
+import { EmailData } from 'mailbox-common';
 
 @Injectable({
   providedIn: 'root'

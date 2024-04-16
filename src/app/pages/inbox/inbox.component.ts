@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EmailData } from 'mailbox-common';
 import { RouterConfiguration } from 'src/app/configurations/router-config';
-import { EmailData } from 'src/app/shared/models/email-data';
 import { EmailService } from 'src/app/shared/services/email.service';
 import { ScreenSizeService } from 'src/app/shared/services/screen-size.service';
 

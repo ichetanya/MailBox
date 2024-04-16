@@ -1,4 +1,4 @@
-import { MenuItem } from "../shared/models/menu-item";
+import { MenuItem } from "mailbox-common";
 import { RouterConfiguration } from "./router-config";
 
 export const Inbox: MenuItem = {

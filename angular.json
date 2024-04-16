@@ -99,6 +99,39 @@
           }
         }
       }
+    },
+    "mailbox-common": {
+      "projectType": "library",
+      "root": "projects/mailbox-common",
+      "sourceRoot": "projects/mailbox-common/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/mailbox-common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mailbox-common/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/mailbox-common/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/mailbox-common/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }

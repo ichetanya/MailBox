@@ -1,0 +1,55 @@
+@import "./variables";
+
+@font-face {
+  font-family: Product Sans;
+  src: url("../../../assets/fonts/product-sans/Product\ Sans\ Regular.ttf");
+}
+@font-face {
+  font-family: Product Sans Bold;
+  src: url("../../../assets/fonts/product-sans/Product\ Sans\ Bold.ttf");
+}
+
+@mixin reset-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin font-product-sans {
+  font-family: Product Sans;
+}
+
+@mixin border-box {
+  box-sizing: border-box;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin user-image($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+@mixin hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+@mixin no-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: $darkGray;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  background-color: $white;
+}
+
+@mixin bold {
+  font-family: Product Sans Bold;
+}

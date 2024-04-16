@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuItem, Folder, UserInfo } from 'mailbox-common';
 import { RouterConfiguration } from 'src/app/configurations/router-config';
-import { Folder } from 'src/app/shared/models/folder';
-import { MenuItem } from 'src/app/shared/models/menu-item';
-import { UserInfo } from 'src/app/shared/models/user-info';
 import { MenuService } from 'src/app/shared/services/menu.service';
 
 @Component({
