@@ -55,8 +55,8 @@
         width: 85%;
         padding: 1.5rem 1rem;
         margin-left: 3.1rem;
-        font-size: .85rem;
-        .email-content{
+        font-size: 0.85rem;
+        .email-content {
           margin-bottom: 1rem;
         }
         .attachment {
@@ -75,30 +75,30 @@
         padding: 1.5rem 1rem;
         margin-left: 3.1rem;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
-        gap: 10px; 
-      
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+
         img {
-          width: 100%; 
-          height: 100%; 
-          object-fit: cover; 
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
-      .reply-section{
+      .reply-section {
         width: 85%;
         padding: 1.5rem 1rem;
         margin-left: 3.1rem;
-        .reply-input{
+        .reply-input {
           box-sizing: border-box;
           width: 100%;
           border-radius: 8px;
           display: inline;
           outline: 1px solid $transparentBlack;
-          padding: .5em;
-          input[type="text"]{
-            width:  80%;
-            border:none; 
-            &:focus{
+          padding: 0.5em;
+          input[type="text"] {
+            width: 80%;
+            border: none;
+            &:focus {
               border: none;
               outline: none;
             }
@@ -106,14 +106,22 @@
           img {
             height: 1rem;
             width: 1rem;
-            margin-right: .2rem;
+            margin-right: 0.2rem;
           }
         }
       }
     }
   }
 }
-
+.top-actions {
+  padding: 2rem 2rem 0 2rem;
+  position: relative;
+  background-color: $white;
+  img {
+    height: 1rem;
+    width: 1rem;
+  }
+}
 .no-data {
   @include no-data;
 }

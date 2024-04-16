@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmailService } from '../../services/email.service';
 import { ActivatedRoute } from '@angular/router';
 import { EmailData } from '../../models/email-data';
+import { ScreenSizeService } from '../../services/screen-size.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-email-preview',
@@ -10,9 +12,12 @@ import { EmailData } from '../../models/email-data';
 })
 export class EmailPreviewComponent implements OnInit {
   data: EmailData;
-
-  constructor(private emailService: EmailService,
-    private route: ActivatedRoute
+  showBackIcon: boolean;
+  constructor(
+    private emailService: EmailService,
+    private route: ActivatedRoute,
+    private screenService: ScreenSizeService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -22,10 +27,23 @@ export class EmailPreviewComponent implements OnInit {
         this.getEmailData(id);
       }
     });
+    this.screenService.size.subscribe({
+      next: (size) => {
+        if (size.width < 860) {
+          this.showBackIcon = true;
+        } else {
+          this.showBackIcon = false;
+        }
+      }
+    })
   }
 
-  getEmailData(id: string) {
+  getEmailData(id: string): void {
     this.data = this.emailService.getEmailById(id);
+  }
+
+  goBack(): void {
+    this.location.back()
   }
 }
 

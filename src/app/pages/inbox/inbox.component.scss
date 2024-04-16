@@ -25,3 +25,19 @@
     }
   }
 }
+
+@media screen and (min-width: 861px) and (max-width: 1000px) {
+  .container .email-cards-container {
+    width: 35%;
+    // margin-left: 40%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .container .email-cards-container {
+    width: 100%;
+  }
+  .container .email-details-container {
+    display: none;
+  }
+}

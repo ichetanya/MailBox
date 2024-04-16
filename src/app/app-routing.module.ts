@@ -35,6 +35,7 @@ const routes: Routes = [
   { path: RouterConfiguration.trash, component: TrashComponent, children: emailChildRoutes },
   { path: RouterConfiguration.empty, component: EmptyPreviewComponent },
   { path: `${RouterConfiguration.folder}/:folderName`, component: FolderComponent },
+  { path: `${RouterConfiguration.details}/:id`, component: EmailPreviewComponent }
 ];
 
 @NgModule({

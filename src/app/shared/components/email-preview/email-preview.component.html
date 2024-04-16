@@ -1,3 +1,11 @@
+<div class="top-actions">
+  <img
+    [src]="'back-arrow.svg' | assetUrl : 'icon'"
+    alt="back"
+    *ngIf="showBackIcon"
+    (click)="goBack()"
+  />
+</div>
 <div class="email-preview-container" *ngIf="data; else noEmail">
   <div class="email-actions">
     <img [src]="'action_group.svg' | assetUrl : 'icon'" alt="group" />
@@ -14,7 +22,7 @@
         </div>
         <div class="email-user-details">
           <p class="email-user-header">
-              {{ data.sender.firstName }} {{ data.sender.lastName }}
+            {{ data.sender.firstName }} {{ data.sender.lastName }}
           </p>
           <p class="email-subject">
             {{ data.subject }}
@@ -27,7 +35,7 @@
       </div>
       <div class="email-body" *ngIf="data.attachments.length">
         <p class="email-content">
-          {{data.body}}
+          {{ data.body }}
         </p>
         <p *ngIf="data?.attachments?.length" class="attachment">
           <img [src]="'attachment.svg' | assetUrl : 'icon'" alt="Attachments" />
@@ -37,18 +45,26 @@
         </p>
       </div>
       <div class="attachment-grid">
-        <img *ngFor="let attachment of data.attachments; index as i" [src]="attachment | assetUrl:'image'"alt="Attachment">
+        <img
+          *ngFor="let attachment of data.attachments; index as i"
+          [src]="attachment | assetUrl : 'image'"
+          alt="Attachment"
+        />
       </div>
       <div class="reply-section">
-        <div  class="reply-input">
-          <input type="text" name="reply" id="reply" placeholder="Type Message" autocomplete="off">
-          <img [src]="'attachment.svg' | assetUrl:'icon'" alt="attachment">
-          <img [src]="'send.svg' | assetUrl:'icon'" alt="reply">
+        <div class="reply-input">
+          <input
+            type="text"
+            name="reply"
+            id="reply"
+            placeholder="Type Message"
+            autocomplete="off"
+          />
+          <img [src]="'attachment.svg' | assetUrl : 'icon'" alt="attachment" />
+          <img [src]="'send.svg' | assetUrl : 'icon'" alt="reply" />
         </div>
-          
       </div>
     </div>
-    
   </div>
 </div>
 <ng-template #noEmail>
