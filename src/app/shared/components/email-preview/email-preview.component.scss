@@ -20,15 +20,66 @@
   .email-preview {
     .email-user-section {
       display: flex;
-      .email-user-image {
-        img {
-          @include user-image(3rem);
+      flex-direction: column;
+      .email-user-card {
+        display: flex;
+        .email-user-image {
+          img {
+            @include user-image(3rem);
+          }
+        }
+        .email-user-details {
+          padding-left: 1rem;
+          width: 85%;
+          .email-user-header {
+            @include bold;
+          }
+          .email-subject {
+            margin-top: 0.1rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            color: $darkGray;
+          }
+          .email-address {
+            margin-top: 0.2rem;
+            font-size: 0.7rem;
+          }
+          .email-time {
+            @include bold;
+            margin-top: 0.4rem;
+            font-size: 0.7rem;
+          }
         }
       }
-    }
-    .email-user-details {
-      padding-left: 1rem;
-      width: 85%;
+      .email-body {
+        width: 85%;
+        padding: 1.5rem 1rem;
+        margin-left: 3.1rem;
+        font-size: .85rem;
+        .email-content{
+          margin-bottom: 1rem;
+        }
+        .attachment {
+          display: inline;
+          color: $skyBlue;
+          margin-top: 2rem;
+          img {
+            height: 1em;
+          }
+          .attachment-label {
+            margin: 0.2em 0.5em 0.6em;
+          }
+        }
+      }
+      .reply-section{
+        width: 85%;
+        // padding: 1.5rem 1rem;
+        margin-left: 3.1rem;
+        .reply-input{
+          box-sizing: border-box;
+          width: 100%;
+        }
+      }
     }
   }
 }

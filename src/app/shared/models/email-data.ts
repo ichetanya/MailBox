@@ -7,5 +7,6 @@ export interface EmailData {
     body: string; 
     date: string;
     time: string;
+    unread?: boolean;
     attachments: any[];
 }

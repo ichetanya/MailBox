@@ -5,6 +5,7 @@ export const Inbox: MenuItem = {
     label: 'Inbox',
     routerLink: RouterConfiguration.inbox,
     icon: 'inbox.svg',
+    chipCount: 20
 }
 
 export const Flagged: MenuItem = {

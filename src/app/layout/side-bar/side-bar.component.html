@@ -28,6 +28,7 @@
       <span class="nav-item-label">
         {{ menu.label }}
       </span>
+      <span  *ngIf="menu.chipCount" class="chip-counter">{{menu.chipCount}}</span>
     </li>
   </ul>
 

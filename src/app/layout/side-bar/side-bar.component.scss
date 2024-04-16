@@ -33,6 +33,7 @@
         display: flex;
         flex-direction: column;
         .user-name {
+          @include bold;
           color: $skyBlue;
         }
         .user-email {
@@ -71,6 +72,17 @@
         padding: 0.6em;
         margin-bottom: 0.4em;
       }
+      .chip-counter {
+        text-align: left;
+        letter-spacing: 0px;
+        color: $white;
+        width: fit-content;
+        padding: 0.2rem 0.8rem;
+        font-size: 0.8rem;
+        background-color: $lightRed;
+        border-radius: 16px;
+        float: right;
+      }
     }
     .side-bar-nav-item:hover {
       @include hover;
@@ -80,9 +92,9 @@
     }
   }
   .side-bar-folder-header {
+    @include bold;
     font-size: 1.4rem;
     padding: 1.4rem 1rem;
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
     .add-folder-btn {
@@ -90,8 +102,8 @@
       letter-spacing: 0px;
       color: $semiTransparentDarkGray;
       opacity: 0.7;
-      padding: 0.2rem 0.6rem;
-      font-size: 0.65em;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.8rem;
       background-color: $transparentSkyBlue;
       border-radius: 16px;
       &:hover {

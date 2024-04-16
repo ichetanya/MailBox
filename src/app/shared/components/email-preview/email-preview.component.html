@@ -9,26 +9,43 @@
   </div>
   <div class="email-preview">
     <div class="email-user-section">
-      <div class="email-user-image">
-        <img
-          [src]="data.sender.image | assetUrl : 'image'"
-          [alt]="data.sender.firstName"
-        />
+      <div class="email-user-card">
+        <div class="email-user-image">
+          <img
+            [src]="data.sender.image | assetUrl : 'image'"
+            [alt]="data.sender.firstName"
+          />
+        </div>
+        <div class="email-user-details">
+          <p class="email-user-header">
+              {{ data.sender.firstName }} {{ data.sender.lastName }}
+          </p>
+          <p class="email-subject">
+            {{ data.subject }}
+          </p>
+          <p class="email-address">
+            {{ data.sender.emailAddress }}
+          </p>
+          <p class="email-time">{{ data.date | day }} {{ data.time }}</p>
+        </div>
       </div>
-      <div class="email-user-details">
-        <p class="email-user-header">
-          <span class="email-user-name">
-            {{ data.sender.firstName }} {{ data.sender.lastName }}
-          </span>
+      <div class="email-body">
+        <p class="email-content">
+          {{data.body}}
         </p>
-        <p class="email-subject">
-          {{ data.subject }}
+        <p *ngIf="data?.attachments?.length" class="attachment">
+          <img [src]="'attachment.svg' | assetUrl : 'icon'" alt="Attachments" />
+          <span class="attachment-label"
+            >{{ data.attachments.length }} Attachments</span
+          >
         </p>
-        <p class="email-subject">
-          {{ data.sender.emailAddress }}
-        </p>
-        <p>{{ data.date | day }} {{ data.time }}</p>
+      </div>
+      <div class="reply-section">
+        <div class="reply-input">
+          <input type="text" name="reply" id="reply" placeholder="Type Message">
+        </div>
       </div>
     </div>
+    
   </div>
 </div>
