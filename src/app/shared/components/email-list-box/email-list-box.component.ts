@@ -11,6 +11,11 @@ export class EmailListBoxComponent {
   @Output() showEmail: EventEmitter<EmailData> = new EventEmitter();
   activeEmailId: string;
 
+  /**
+   * Emits showEmail when user clicks on any email card.
+   * 
+   * @param data Selected Email Data
+   */
   emitEvent(data: EmailData): void {
     this.activeEmailId = data.id!;
     this.showEmail.emit(data);

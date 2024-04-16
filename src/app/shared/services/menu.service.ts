@@ -17,14 +17,23 @@ export class MenuService {
     Trash
   ];
 
+  /**
+   * Returns menu list which will be displayed in the sidebar
+   */
   getMenuItems(): MenuItem[] {
     return this.menuItems;
   }
 
+  /**
+  * Returns the list of available folders
+  */
   getFolders(): Folder[] {
     return folders;
   }
 
+  /**
+   * Returns current user's detail. 
+   */
   getUserDetails(): UserInfo {
     return user;
   }

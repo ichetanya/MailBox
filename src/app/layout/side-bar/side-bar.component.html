@@ -1,12 +1,19 @@
-<div class="side-bar" [ngClass]="collapsed ? 'side-bar-collapsed' : ''">
-  <div class="side-bar-user-info">
+<div class="side-bar" [ngClass]="{ 'side-bar-collapsed': sidebarCollapsed }">
+  <div
+    class="side-bar-expand-icon"
+    (click)="openSidebar()"
+    *ngIf="sidebarCollapsed"
+  >
+    <img [src]="'hamburger.svg' | assetUrl : 'icon'" />
+  </div>
+  <div class="side-bar-user-info" *ngIf="!sidebarCollapsed">
     <div class="user-image">
       <img
         [src]="currentUser.image | assetUrl : 'image'"
         alt="data.sender.firstName"
       />
     </div>
-    <div class="user-details">
+    <div class="user-details" *ngIf="!sidebarCollapsed">
       <div class="user-header">
         <p class="user-name">
           {{ currentUser?.firstName }} {{ currentUser?.lastName }}
@@ -15,6 +22,13 @@
           {{ currentUser.emailAddress }}
         </p>
       </div>
+    </div>
+    <div
+      class="close-icon"
+      (click)="closeSidebar()"
+      *ngIf="!sidebarCollapsed && isMobileDevice"
+    >
+      <img [src]="'close.svg' | assetUrl : 'icon'" />
     </div>
   </div>
   <ul class="side-bar-nav">
@@ -25,14 +39,16 @@
       routerLinkActive="active"
     >
       <img [src]="menu.icon | assetUrl : 'icon'" [alt]="menu.label" />
-      <span class="nav-item-label">
+      <span class="nav-item-label" *ngIf="!sidebarCollapsed">
         {{ menu.label }}
       </span>
-      <span  *ngIf="menu.chipCount" class="chip-counter">{{menu.chipCount}}</span>
+      <span *ngIf="menu.chipCount && !sidebarCollapsed" class="chip-counter">{{
+        menu.chipCount
+      }}</span>
     </li>
   </ul>
 
-  <div class="side-bar-folder-header">
+  <div class="side-bar-folder-header" *ngIf="!sidebarCollapsed">
     <span> Folders </span>
     <span class="add-folder-btn">Add</span>
   </div>
@@ -43,15 +59,15 @@
       (click)="navigateToFolder(folder)"
     >
       <img [src]="folder.icon | assetUrl : 'icon'" [alt]="folder.label" />
-      <span class="nav-item-label">
+      <span class="nav-item-label" *ngIf="!sidebarCollapsed">
         {{ folder.label }}
       </span>
     </li>
   </ul>
-
-  <div class="compose-section">
+  <div class="compose-section" *ngIf="!sidebarCollapsed">
     <button class="compose-button">
       <span class="compose-button-label">Compose</span>
     </button>
   </div>
 </div>
+<div class="overlay" *ngIf="!sidebarCollapsed && isMobileDevice"></div>

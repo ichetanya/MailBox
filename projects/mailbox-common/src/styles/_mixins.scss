@@ -1,14 +1,5 @@
 @import "./variables";
 
-@font-face {
-  font-family: Product Sans;
-  src: url("../../../assets/fonts/product-sans/Product\ Sans\ Regular.ttf");
-}
-@font-face {
-  font-family: Product Sans Bold;
-  src: url("../../../assets/fonts/product-sans/Product\ Sans\ Bold.ttf");
-}
-
 @mixin reset-margin-padding {
   margin: 0;
   padding: 0;

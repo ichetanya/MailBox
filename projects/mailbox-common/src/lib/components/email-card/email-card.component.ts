@@ -18,6 +18,9 @@ export class EmailCardComponent {
   showEmail: EventEmitter<EmailData> = new EventEmitter();
 
 
+  /**
+   * Emits event when user clicks on the card.
+   */
   onClick(): void {
     this.showEmail.emit(this.data);
   }

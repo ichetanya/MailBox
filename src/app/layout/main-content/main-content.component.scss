@@ -16,8 +16,8 @@
 }
 
 @media screen and (max-width: 860px) {
-  .main-content {
-    width: 100%;
-    margin-left: 0;
-  }
+    .main-content {
+      width: calc(100% - 10%);
+      margin-left: 10%;
+    }
 }
